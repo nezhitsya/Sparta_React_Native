@@ -17,7 +17,7 @@
 - Expo는 안드로이드, iOS 코드를 건드려야 하는 상황에서 도와주는 툴
 - 개발 중인 앱을 쉽게 확인해주는 앱 제공 (Expo 클라이언트 앱)
 
-[iOS 클라이언트 앱](https://apps.apple.com/app/apple-store/id982107779)
+[iOS 클라이언트 앱](https://apps.apple.com/app/apple-store/id982107779) <br>
 [안드로이드 클라이언트 앱](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=www)
 
 ## 03. 리액트 네이티브 & Expo 설치
@@ -78,9 +78,10 @@ expo start --ios
 
 - 기본 폴더 구조
 <img width="700" src="https://user-images.githubusercontent.com/60697742/127077190-410ce1ab-97e5-4f65-b999-f6d0c6c19e74.png">
-**assets** : 앱이 동작되고 서비스되는데에 기본적으로 가지고 있는 이미지 및 아이콘 파일을 담는 폴더
-**node_modules** : 라이브러리 저장 장소
-**App.js** : 리액트 네이티브 앱이 시작되는 출발선 및 진입점
+
+**assets** : 앱이 동작되고 서비스되는데에 기본적으로 가지고 있는 이미지 및 아이콘 파일을 담는 폴더 <br>
+**node_modules** : 라이브러리 저장 장소 <br>
+**App.js** : 리액트 네이티브 앱이 시작되는 출발선 및 진입점 <br>
 **app.json** : 앱의 이름, 출시 버전, 아이콘, 스플래시 스크린, 광고 설정 등 앱이 가지는 기본 정보 설정 파일
 
 ## 05. JSX 문법
