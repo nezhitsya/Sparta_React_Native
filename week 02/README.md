@@ -84,3 +84,39 @@ expo start --ios
 **app.json** : 앱의 이름, 출시 버전, 아이콘, 스플래시 스크린, 광고 설정 등 앱이 가지는 기본 정보 설정 파일
 
 ## 05. JSX 문법
+```javascript
+// 리액트, 리액트 네이티브, 엑스포 라이브러리에서 꺼내 사용할 기능들을
+// 이렇게 앞으로도 상단에 선언한다음 가져다 사용
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+// App.js는 App 함수를 내보내기 하고 있는 자바스크립트 파일
+// 이 함수는 무언가?를 반환하고 있는데 결국 화면을 반환
+export default function App() {
+    // 화면을 반환
+	// HTML 태그 같이 생긴 이 문법은 JSX라 불리우며 실제 화면을 그리는 문법
+	
+    // 경고창 없애기
+    console.disableYellowBox = true;
+
+    return (
+        <View style={styles.container}>
+            <Text>Open up App.js to start working on your app!</Text>
+            <StatusBar style="auto" />
+        </View>
+    );
+}
+
+// styles 변수 이름 답게 화면을 그려주는, JSX문법을 꾸며주는 내용
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+});
+```
+
+## 06. JSX 기본 문법
