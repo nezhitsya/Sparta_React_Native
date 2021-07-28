@@ -121,3 +121,84 @@ const styles = StyleSheet.create({
 ```
 
 ## 06. JSX 기본 문법
+- **return**은 작성한 JSX 문법으로 구성된 화면을 앱상에서 보여주는 역할
+- **rendering**(렌더링)은 JSX 문법을 화면에 그려주는 행위
+- JSX < > **태그** < > </ > **엘리면트**
+
+1. 모든 태그는 가져와서 사용
+```javascript
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+```
+
+2. 태그는 항상 닫는 태그와 자체적으로 닫는 태그 구분해서 사용
+```javascript
+export default function App() {
+  return (
+		//<View>는 결국 두번째 줄 밑에 </View>로 닫히면서 본인 영역을 갖는다 
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+			//statusBar는 본인 스스로 닫는 태그이므로 다음과 같이 사용이 가능합니다.
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+```
+
+3. 모든 엘리먼트는 감싸는 최상위 엘리먼트 존제 (엘리먼트는 곧 태그 <>)
+```javascript
+//App.js가 렌더링 하고 엘리먼트는 결국
+//Text와 StatusBar엘리먼트를 감싸고 있는 View
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+```
+
+4. return애 의해 렌더링 될 땐 항상 소괄호로 감싼다.
+5. JSX 문법 밖에서의 주석과 안에서의 주석은 다르다.
+```javascript
+//JSX밖에서의 주석
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+//JSX밖에서의 주석
+export default function App() {
+	//JSX밖에서의 주석
+  return (
+		//JSX 밖에서의 주석
+    <View style={styles.container}>
+			{/*
+				JSX 문법 안에서의 주석
+			*/}
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
+  );
+}
+```
+
+## 07. View, Text, ScrollView
+**<View></View>** <br>
+화면의 영역(레이아웃)을 잡아주는 엘리먼트
+View 엘리먼트로 원하는 대로 화면 분할 가능 (StyleSheet와 같이 사용)
+
+**Text** <br>
+앱에 글을 작성하기 위해 사용하는 엘리먼트
+
+**ScrollView**<br>
+앱 화면을 벗어나는 영역의 경우 ScrollView 엘리먼트로 감싸면 스크롤이 가능
