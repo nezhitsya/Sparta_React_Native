@@ -351,3 +351,101 @@ const styles = StyleSheet.create({
 <p align="center">
     <img width="300" src="https://user-images.githubusercontent.com/60697742/127253910-4470e2eb-0fce-459a-96b3-f5f2ee2ef224.mov">
 </p>
+
+## 09. Styles
+- 모든 태그에 공통적인 속성 **styles**
+- **StyleSheet** 기능을 가져와 적용
+- style 속성 아래에서 만든 객체 키 값을 부여하여 적용
+```
+styles 속성에 styles 객체 container 키 연결
+<View style={styles.container}>
+```
+
+**StyleSheet 문법**
+- margin, padding
+
+<img width="700" src="https://user-images.githubusercontent.com/60697742/127254406-e4fe2772-85c2-484d-900a-a8af034da2f6.png">
+
+```javascript
+const styles = StyleSheet.create({
+  container: {
+    //영역을 잡는 속성입니다. 따로 자세히 다룹니다.
+    //flex: 1은 전체 화면을 가져간다는 뜻입니다
+    flex: 1,
+    //영역의 배경 색을 결정합니다
+    backgroundColor: '#fff',
+    //아래 두 속성은 영역 안의 컨텐츠들의 배치를 결정합니다. 
+    //flex를 자세히 다룰때 같이 자세히 다룹니다
+    justifyContent:"center",
+    alignContent:"center"
+  },
+  textContainer: {
+    //영역의 바깥 공간 이격을 뜻합니다(하단 이미지 참조)
+    margin:10,
+    //영역 안의 컨텐츠 이격 공간을 뜻합니다(하단 이미지 참조)
+    padding: 10,
+    //테두리의 구부러짐을 결정합니다. 지금 보면 조금 둥글죠?
+    borderRadius:10,
+    //테두리의 두께를 결정합니다
+    borderWidth:2,
+    //테두리 색을 결정합니다
+    borderColor:"#000",
+    //테구리 스타일을 결정합니다. 실선은 solid 입니다
+    borderStyle:"dotted",
+
+  },
+  textStyle: {
+    //글자 색을 결정합니다. rgb, 값 이름, 색상코드 모두 가능합니다
+    color:"red",
+    //글자의 크기를 결정합니다
+    fontSize:20,
+    //글자의 두께를 결정합니다
+    fontWeight:"700",
+    //가로기준으로 글자의 위치를 결정합니다
+    textAlign:"center"
+  }
+});
+```
+
+## 10. Flex : 컨텐츠 위치
+**flex** : 영역을 차지하는 속성. 위치한 곳의 영역을 flex 합 비율대로 가져간다. <br>
+**flexDirection** : 자리잡은 영역의 방향 <br>
+- row : 가로
+- column : 세로 (기본 값)
+
+**[justifyContent](https://medium.com/@pateldhara248/flex-direction-justify-content-align-items-71d65bec1e95)** : flexDirection과 동일한 방향으로 정렬하는 속성 <br>
+
+**column** **row**
+<p align="center">
+    <img width="300" src="https://miro.medium.com/max/468/1*9oS5GRu2VMCIoovdJ1H_ag.png">
+    <img width="300" src="https://miro.medium.com/max/464/1*fNeS0WTsCSL5txZ2OQqUCA.png">
+</p>
+
+**center** **flex-end** **space-around**
+<p align="center">
+    <img width="300" src="https://miro.medium.com/max/454/1*kWnIwHJTcYlVYG3sAuK4ug.png">
+    <img width="300" src="https://miro.medium.com/max/438/1*zLDcmG-rjw4z_3FEiZhK8Q.png">
+    <img width="300" src="https://miro.medium.com/max/468/1*LBjHjKcFQPVZtGejGrmf7w.png">
+</p>
+
+**flex-start** **space-between**
+<p align="center">
+    <img width="300" src="https://miro.medium.com/max/458/1*OEh_0z_A9eYshtiwL3DGzA.png">
+    <img width="300" src="https://miro.medium.com/max/458/1*OWEubADEq3-vOJwO9Uvp4g.png">
+</p>
+
+**row-space-around** **row-space-between**
+<p align="center">
+    <img width="300" src="https://miro.medium.com/max/464/1*vmYVnLOZLPIPfrhX7UTHHQ.png">
+    <img width="300" src="https://miro.medium.com/max/472/1*MVaviyiWNkhOOPnZQhpZYQ.png">
+</p>
+
+**alignItems** : Flex Direction과 수작 방향(반대 방향)으로 정렬 <br>
+flexDirection을 column으로 했을 때 alignItems는 반대 축 row 기준으로 정렬
+strech 속성은 해당 축의 크기를 지정하지 않으면 자동으로 영역 전체 차지
+
+<p align="center">
+    <img width="300" src="https://t1.daumcdn.net/cfile/tistory/99B1B5366010F1EA10?original">
+</p>
+
+## 11. 메인화면
