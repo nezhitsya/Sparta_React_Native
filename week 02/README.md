@@ -417,35 +417,44 @@ const styles = StyleSheet.create({
 
 **column** **row**
 <p align="center">
-    <img width="300" src="https://miro.medium.com/max/468/1*9oS5GRu2VMCIoovdJ1H_ag.png">
-    <img width="300" src="https://miro.medium.com/max/464/1*fNeS0WTsCSL5txZ2OQqUCA.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264015-d8e04eac-a3fc-4d6f-b36b-1a967ffda5a3.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264048-5bb2c538-daad-4dc7-ad48-b619490e6070.png">
 </p>
 
 **center** **flex-end** **space-around**
 <p align="center">
-    <img width="300" src="https://miro.medium.com/max/454/1*kWnIwHJTcYlVYG3sAuK4ug.png">
-    <img width="300" src="https://miro.medium.com/max/438/1*zLDcmG-rjw4z_3FEiZhK8Q.png">
-    <img width="300" src="https://miro.medium.com/max/468/1*LBjHjKcFQPVZtGejGrmf7w.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264164-fcff334e-b927-498f-9808-974453650760.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264167-58a1b94f-5f11-4c3c-a5c2-791a36b3ba2c.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264170-060d7b6e-a1cb-4539-82c1-d5c5e159b180.png">
 </p>
 
 **flex-start** **space-between**
 <p align="center">
-    <img width="300" src="https://miro.medium.com/max/458/1*OEh_0z_A9eYshtiwL3DGzA.png">
-    <img width="300" src="https://miro.medium.com/max/458/1*OWEubADEq3-vOJwO9Uvp4g.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264286-0aaad602-4ddc-4946-9800-6d899920d47d.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264291-36cec114-6476-42aa-80e8-abaadc7282a0.png">
 </p>
 
 **row-space-around** **row-space-between**
 <p align="center">
-    <img width="300" src="https://miro.medium.com/max/464/1*vmYVnLOZLPIPfrhX7UTHHQ.png">
-    <img width="300" src="https://miro.medium.com/max/472/1*MVaviyiWNkhOOPnZQhpZYQ.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264389-bb208a8b-9f68-4af0-b618-7f5eb48763ea.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264391-a86f7d1c-40ca-43d8-a3d3-4538bd6efed4.png">
 </p>
 
 **alignItems** : Flex Direction과 수작 방향(반대 방향)으로 정렬 <br>
 flexDirection을 column으로 했을 때 alignItems는 반대 축 row 기준으로 정렬
 strech 속성은 해당 축의 크기를 지정하지 않으면 자동으로 영역 전체 차지
 
+**center** **flex** **flex-start** **flex-end**
 <p align="center">
-    <img width="300" src="https://t1.daumcdn.net/cfile/tistory/99B1B5366010F1EA10?original">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264656-3eed7994-9abf-4120-9665-b1e6ff52b70e.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264658-ae9504b6-12ef-4d37-9e26-72f89183ed11.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264661-43fdd7a8-ba52-45a5-a378-9800796b011c.png">
+</p>
+
+**stretch-column** **stretch-row**
+<p align="center">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264900-5193973a-a7bb-4b20-b686-bef2eddb7b9b.png">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264905-1757b5cd-c6f5-437c-85b6-e0d493fe8bda.png">
 </p>
 
 ## 11. 메인화면
