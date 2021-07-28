@@ -155,7 +155,7 @@ export default function App() {
 }
 ```
 
-3. 모든 엘리먼트는 감싸는 최상위 엘리먼트 존제 (엘리먼트는 곧 태그 <>)
+3. 모든 태그는 감싸는 최상위 엘리먼트 존제 (엘리먼트는 곧 태그 <>)
 ```javascript
 //App.js가 렌더링 하고 엘리먼트는 결국
 //Text와 StatusBar엘리먼트를 감싸고 있는 View
@@ -193,7 +193,7 @@ export default function App() {
 ```
 
 ## 07. View, Text, ScrollView
-**<View></View>** <br>
+**View** <br>
 화면의 영역(레이아웃)을 잡아주는 엘리먼트
 View 엘리먼트로 원하는 대로 화면 분할 가능 (StyleSheet와 같이 사용)
 
@@ -202,3 +202,152 @@ View 엘리먼트로 원하는 대로 화면 분할 가능 (StyleSheet와 같이
 
 **ScrollView**<br>
 앱 화면을 벗어나는 영역의 경우 ScrollView 엘리먼트로 감싸면 스크롤이 가능
+
+```javascript
+import React from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+
+  console.disableYellowBox = true;
+  
+  return (
+    <ScrollView style={styles.container}>
+        <View style={styles.textContainer}>
+            <Text style={styles.textStyle}>Text Container</Text>
+        </View>
+        ...
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  textContainer: {
+    height:100,
+    borderColor:'#000',
+    borderWidth:1,
+    borderRadius:10,
+    margin:10
+  },
+  textStyle: {
+    textAlign:"center"
+  }
+});
+```
+<p align="center">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127251042-2e1d3ecb-db7f-471e-afc8-68965eafa6a8.png">
+</p>
+
+## 08. Button, Image
+**Button** <br>
+onPress속성에 함수 연결(바인딩)
+연결한 함수 구현부를 JSX 밖에서 구현하여 바인딩 가능
+
+**TouchableOpacity** <br>
+임의의 영역과 디자인에 버튼 기능을 달고 싶을 때 주로 사용
+
+**Image** <br>
+이미지 삽입 방식 2가지
+1. assets 폴더의 이미지를 가져오기 {import}
+2. 외부 이미지 링크 넣기 {url}
+
+```javascript
+import React from 'react';
+import { Alert, Button, ScrollView, StyleSheet, Text, TouchableOpacity, Image, View } from 'react-native';
+import favicon from "./assets/favicon.png"
+
+export default function App() {
+
+  console.disableYellowBox = true;
+
+  const customAlert = () => {
+    Alert.alert("outside of JSX function")
+  }
+  
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.textContainer}>
+        <Text style={styles.textStyle}>Text Container</Text>
+        <Button 
+          style={styles.buttonStyle}
+          title="Button"
+          color="#FFAA4C"
+          onPress={function(){
+            Alert.alert('popup alert')
+          }}
+        />
+        <Button 
+            style={styles.buttonStyle} 
+            title="Button"
+            color="#5089C6" 
+            onPress={()=>{
+              Alert.alert('popup alert')
+            }}
+          />
+          <Button
+            style={styles.buttonStyle}
+            title="Button"
+            color="#B980F0"
+            onPress={() => {customAlert()}}
+          />
+          <Button
+            style={styles.buttonStyle}
+            title="Button"
+            color="#F8E2CF"
+            onPress={customAlert}
+          />
+      </View>
+      <TouchableOpacity
+        style={styles.textContainer}
+        onPress={customAlert}>
+        <Text style={styles.textStyle}>Text</Text>
+      </TouchableOpacity>
+      <View style={styles.textContainer}>
+        <Image
+          source={favicon}
+          resizeMode={"repeat"}
+          style={styles.imageStyle}
+        />
+      </View>
+      <View style={styles.textContainer}>
+        <Image
+          source={{uri:'https://user-images.githubusercontent.com/60697742/127253669-56304aa4-b412-4312-9b9a-95d9d9118fcc.jpg'}}
+          resizeMode={"cover"}
+          style={styles.imageStyle}
+        />
+      </View>
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  textContainer: {
+    height:180,
+    borderColor:'#000',
+    borderWidth:1,
+    borderRadius:10,
+    margin:50
+  },
+  textStyle: {
+    textAlign:"center"
+  },
+  imageStyle: {
+    width:"100%",
+    height:"100%",
+    alignItems:"center",
+    justifyContent:"center"
+  }
+});
+```
+
+<p align="center">
+    <img width="300" src="https://user-images.githubusercontent.com/60697742/127253910-4470e2eb-0fce-459a-96b3-f5f2ee2ef224.mov">
+</p>
