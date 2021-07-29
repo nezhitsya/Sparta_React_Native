@@ -520,3 +520,31 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'reac
 <p align="center">
   <img width="300" src="https://user-images.githubusercontent.com/60697742/127420996-2e622111-473a-4020-a3c8-12f75aca99c8.png">
 </p>
+
+```javascript
+<View style={styles.textContainer1}>
+  {
+    tip.map((content, i) => {
+      return i % 2 == 0 ? (
+        <View style={styles.textContainer2} key={i}>
+          <Image style={styles.cardImage} source={{url:content.image}} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardTitle}>{content.title}</Text>
+            <Text style={styles.cardDescription} numberOfLines={3}>{content.desc}</Text>
+            <Text style={styles.cardDate}>{content.date}</Text>
+          </View>
+        </View>
+      ) : (
+        <View style={styles.textContainer3} key={i}>
+          <Image style={styles.cardImage} source={{url:content.image}} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardTitle}>{content.title}</Text>
+            <Text style={styles.cardDescription} numberOfLines={3}>{content.desc}</Text>
+            <Text style={styles.cardDate}>{content.date}</Text>
+          </View>
+        </View>
+      )
+    })
+  }
+</View>
+```
