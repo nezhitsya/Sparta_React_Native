@@ -436,8 +436,8 @@ const styles = StyleSheet.create({
 
 **row-space-around** **row-space-between**
 <p align="center">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264389-bb208a8b-9f68-4af0-b618-7f5eb48763ea.png">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264391-a86f7d1c-40ca-43d8-a3d3-4538bd6efed4.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264389-bb208a8b-9f68-4af0-b618-7f5eb48763ea.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264391-a86f7d1c-40ca-43d8-a3d3-4538bd6efed4.png">
 </p>
 
 **alignItems** : Flex Direction과 수작 방향(반대 방향)으로 정렬 <br>
@@ -446,15 +446,77 @@ strech 속성은 해당 축의 크기를 지정하지 않으면 자동으로 영
 
 **center** **flex** **flex-start** **flex-end**
 <p align="center">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264656-3eed7994-9abf-4120-9665-b1e6ff52b70e.png">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264658-ae9504b6-12ef-4d37-9e26-72f89183ed11.png">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264661-43fdd7a8-ba52-45a5-a378-9800796b011c.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264656-3eed7994-9abf-4120-9665-b1e6ff52b70e.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264658-ae9504b6-12ef-4d37-9e26-72f89183ed11.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264661-43fdd7a8-ba52-45a5-a378-9800796b011c.png">
 </p>
 
 **stretch-column** **stretch-row**
 <p align="center">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264900-5193973a-a7bb-4b20-b686-bef2eddb7b9b.png">
-    <img width="300" src="https://user-images.githubusercontent.com/60697742/127264905-1757b5cd-c6f5-437c-85b6-e0d493fe8bda.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264900-5193973a-a7bb-4b20-b686-bef2eddb7b9b.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127264905-1757b5cd-c6f5-437c-85b6-e0d493fe8bda.png">
 </p>
 
-## 11. 메인화면
+## 11. 실전 연습
+1. 필요한 태그 고려
+2. 해당 태그 속성, 기능 [공식문서](https://reactnative.dev/docs/layout-props) 활용히야 숙지
+3. 디자인 고려
+
+## 12. 실전
+기본 함수 골격
+```javascript
+export default function App() {
+  console.disableYellowBox = true;
+  //return 구문 밖에서는 슬래시 두개 방식으로 주석
+  return ()
+
+}
+
+const styles = StyleSheet.create({})
+```
+
+라이브러리 임포트
+```javascript
+import React from 'react';
+import main from './assets/main.png';
+import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView} from 'react-native';
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127270028-c292b87e-a006-43ed-b2db-6ad9e92e274d.png">
+</p>
+
+## 13. 모듈 & 반복문
+- 모듈 시스템은 하면을 그리는 함수 말고도 데이터를 다룰 때에도 유용
+- **./** 현재 파일과 동일한 위치에서 불러올 파일을 찾는 코드 <br>
+- **../** 현재 파일이 위치한 폴더보다 상위 위치에서 불러올 파일을 찾는 코드
+- **map**은 { } 안에서 사용 가능, 즉, JSX 문법 안에서 구현 가능
+
+```javascript
+<View style={styles.textContainer1}>
+  {
+    tip.map((content, i) => {
+      return (
+        <View style={styles.textContainer2} key={i}>
+          <Image style={styles.cardImage} source={{url:content.image}} />
+          <View style={styles.cardText}>
+            <Text style={styles.cardTitle}>{content.title}</Text>
+            <Text style={styles.cardDescription} numberOfLines={3}>{content.desc}</Text>
+            <Text style={styles.cardDate}>{content.date}</Text>
+          </View>
+        </View>
+      )
+    })
+  }
+</View>
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127420970-9dc40876-3c70-4ffd-a05e-9b0e00c6a0a3.png">
+</p>
+
+## 14. {} 표현식 & 조건문
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127420996-2e622111-473a-4020-a3c8-12f75aca99c8.png">
+</p>
