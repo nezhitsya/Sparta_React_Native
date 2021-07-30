@@ -7,7 +7,7 @@
 2. 이메일 판별 (indexOf 이용 / 정규 표현식 이용)
 ```
 
-## [2 주차 과제]()
+## [2 주차 과제](https://github.com/nezhitsya/Sparta_React_Native/tree/master/week%2002/Homework02)
 
 <p align="center">
   <img width="300" src="https://user-images.githubusercontent.com/60697742/127432885-9bcd77a9-ff40-4f53-abf8-18c900c33f42.png">
