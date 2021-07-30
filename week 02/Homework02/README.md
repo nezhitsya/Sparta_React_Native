@@ -1,4 +1,4 @@
-# [About Page]()
+# [About Page](https://velog.io/@nezhitsya/스파르타-코딩-클럽-개발일지-2-hbu7r6lc)
 
 <p align="center">
   <img width="300" src="https://user-images.githubusercontent.com/60697742/127432885-9bcd77a9-ff40-4f53-abf8-18c900c33f42.png">
@@ -37,3 +37,57 @@ export default function AboutPage() {
 **center horizontal** == alignItems: "center" <br>
 **center vertical** == justifyContent: "center" <br>
 **text center horizontal** == textAlign: "center"
+
+```javascript
+const styles = StyleSheet.create({
+    container1: {
+        flex: 1,
+        backgroundColor: "#001E6C",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    container2: {
+        width: 300,
+        height: 500,
+        backgroundColor: "white",
+        borderRadius: 20,
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    button: {
+        backgroundColor: "orange",
+        borderRadius: 15,
+        padding: 15,
+        marginTop: 30
+    },
+    aboutImage: {
+        width: 150,
+        height: 150,
+        borderRadius: 20,
+        marginTop: 20
+    },
+    title: {
+        color: "white",
+        fontWeight: "bold",
+        fontSize: 30,
+        padding: 35,
+        textAlign: "center"
+    },
+    introText: {
+        fontSize: 20,
+        fontWeight: "bold",
+        padding: 30,
+        textAlign: "center"
+    },
+    descText: {
+        paddingLeft: 30,
+        paddingRight: 30,
+        textAlign: "center"
+    },
+    buttonText: {
+        color: "white",
+        fontSize: 15,
+        fontWeight: "bold"
+    }
+})
+```

@@ -56,7 +56,84 @@ export default function DetailPage() {
 - **속성 (Props)** : 상위 컴포넌트에서 하위 컴포넌트로 데이터를 전달하는 방식
 - **useEffect** : 화면에 컴포넌트가 그려지면 처음 실행해야 하는 함수들을 모아두는 곳
 
+- MainPage 컴포넌트화
+
+**MainPage**
+
+```javascript
+// 라이브러리
+import Card from '../components/Card';
+...
+<View style={styles.textContainer}>
+    {
+        tip.map((content, i) => {
+            return (
+                <Card content={content} key={i} />
+            )
+        })
+    }
+</View>
+```
+
+**Card component**
+
+```javascript
+export default function Card({content}) {
+
+    return (
+        <View style={styles.card}>
+            <Image style={styles.cardImage} source={{uri:content.image}} />
+            <View style={styles.cardText}>
+                <Text style={styles.cardTitle}>{content.title}</Text>
+                <Text style={styles.cardDesc} numberOfLines={3}>{content.desc}</Text>
+                <Text style={styles.cardDate}>{content.date}</Text>
+            </View>
+        </View>
+    )
+}
+```
+
 ## 05. 속성 (Props)
 - **속성** : 컴포넌트에 데이터 전달. key & value 형태
     - ex. Text 태그의 numberOfLines 속성
     - ex. Image 태그의 resizeMode 속성
+
+1. 컴포넌트에 속성(떼이터)을 부여해 전달 시, key & value (content={content}) 형태로 전달
+2. 컴포넌트 반복문 수행 시, map에서 나오는 인덱스(i)를 key={i} 속성 전달 형태로 삽입
+
+MainPage.js에서의 Card.js 컴포넌트
+
+```javascript
+<View style={styles.textContainer}>
+    {
+        tip.map((content, i) => {
+            return (
+                <Card content={content} key={i} />
+            )
+        })
+    }
+</View>
+```
+
+Card.js에서의 속성 값
+
+```javascript
+export default function Card({content})
+...
+<Image style={styles.cardImage} source={{uri:content.image}} />
+...
+```
+
+**비구조 할당 방식** <br>
+- 딕셔너리에서 키 값을 바로 취해 변수로써 함수 안에서 즉시 사용할 수 있는 방식
+
+## 06. 상태 (useState) & useEffect
+- **상태 (State, useState)** : 컴포넌트에서 보유 / 관리되는 데이터
+- useSate로 생성 setState 함수로 정 / 변경
+
+```javascript
+// 사용자 화면 (UI)은 컴포넌트 (component)에 어떤 데이터 (state)가 주입되고 변경되냐에 따라 변화
+UI = component(state)
+```
+
+- useEffect : 화면이 그려진 후 가장 먼저 실행되는 함수
