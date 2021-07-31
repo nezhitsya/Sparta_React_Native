@@ -136,4 +136,17 @@ export default function Card({content})
 UI = component(state)
 ```
 
-- useEffect : 화면이 그려진 후 가장 먼저 실행되는 함수
+- **useEffect** : 화면이 그려진 후 가장 먼저 실행되는 함수
+
+```javascript
+useEffect(() => {
+    // 화면이 그려진 다음 가장 먼저 실행되야 할 코드
+} [])
+```
+
+1. 화면 생성
+2. useEffect가 데이터 준비 (state에 useState를 이용하여 업데이트)
+3. 상태 데이터 업데이트 후 화면 다시 생성
+
+## 07. 컴포넌트와 상태를 이용한 로딩화면
+화면이 그려질때 데이터 준비하는 동안 로딩화면으로 대체
