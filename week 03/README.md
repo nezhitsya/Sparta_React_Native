@@ -150,3 +150,26 @@ useEffect(() => {
 
 ## 07. 컴포넌트와 상태를 이용한 로딩화면
 화면이 그려질때 데이터 준비하는 동안 로딩화면으로 대체
+
+```javascript
+const [state, setState] = useState([])
+const [ready, setState] = useState(true)
+
+useEffect(() => {
+    setTimeout(() => {
+        setState(data)
+        setReady(False)
+    }, 1000)
+}, [])
+
+return ready ? <Loading /> : (
+    ...
+)
+```
+
+1. ready라는 새로운 상태값 추가 (상태값은 컴포넌트 안에 여러개 존재 가능)
+2. ready 값이 true이므로 return 구문에서 ? 물음표 바로 뒤의 Loading 컴포넌트가 화면에 보려진다.
+3. 화면이 보여진 후 1초 후 상태값들이 채워지고 변경
+4. ready 값이 false로 변경
+5. 상태값이 변경되어 화면이 다시 그려진다.
+6. ready 값이 false 이므로, return 구문에서 : 콜론 뒤의 MainPage 컴포넌트가 화면에 그려진다.
