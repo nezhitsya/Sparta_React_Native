@@ -153,12 +153,12 @@ useEffect(() => {
 
 ```javascript
 const [state, setState] = useState([])
-const [ready, setState] = useState(true)
+const [ready, setReady] = useState(true)
 
 useEffect(() => {
     setTimeout(() => {
         setState(data)
-        setReady(False)
+        setReady(false)
     }, 1000)
 }, [])
 
@@ -173,3 +173,61 @@ return ready ? <Loading /> : (
 4. ready 값이 false로 변경
 5. 상태값이 변경되어 화면이 다시 그려진다.
 6. ready 값이 false 이므로, return 구문에서 : 콜론 뒤의 MainPage 컴포넌트가 화면에 그려진다.
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127805421-45ac296f-87be-4359-9e54-648df5f44d8a.png">
+</p>
+
+## 08. 카테고리
+- 누르면 하단의 데이터가 카테고리에 맞게 다시 정렬되는 기능 (카테고리 상태 값이 변하면 화면 변경)
+
+```javascript
+const [state, setState] = useState([])
+const [cateState, setCateState] = useState([])
+const [ready, setReady] = useState(true)
+
+const category = (cate) => {
+    if (cate == '전체보기') {
+        setCateState(state)
+    } else {
+        setCateState(state.filter((d) => {
+            return d.category == cate
+        }))
+    }
+}
+
+useEffect(() => {
+    setTimeout(() => {
+        let tip = data.tip
+        setState(tip)
+        setCateState(tip)
+        setReady(false)
+    }, 1000)
+}, [])
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127805765-c6a7f705-7e4b-4c7e-8329-85682cf7aacc.mp4">
+</p>
+
+## 09. 앱 상태 바(Status Bar) 관리
+**Expo SDK.**에서 제공해주는 앱 기능 도구 개발 시 확인할 수 있는 사이트 <br>
+[EXPO](https://docs.expo.io/versions/v38.0.0/) <br>
+
+- Expo 상태 바 설치
+
+```
+expo install expo-status-bar
+```
+
+```javascript
+import { StatusBar } from 'expo-status-bar'
+...
+<StatusBar style="black" /> // 또는
+<StatusBar style="light" />
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127806450-560a634a-6061-4b79-ac2b-4048fdf25d28.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127806467-8842d67b-2951-4925-8d25-d59af0eb8eda.png">
+</p>
