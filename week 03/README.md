@@ -323,7 +323,7 @@ const StackNavigator = () => {
                 borderBottomColor: "white",
                 shadowColor: "white"
             },
-            headerTitleAlign: 'left',
+            headerTitleAlign: "left",
             headerTintColor: "black",
             headerBackTitleVisible: false
         }}>
@@ -338,6 +338,153 @@ const StackNavigator = () => {
   <img width="300" src="https://user-images.githubusercontent.com/60697742/127941522-350962cd-9ed0-4670-953b-b48bf4b64dc2.png">
 </p>
 
-## 12. 스택네비게이션 03
+## 13. 스택네비게이션 03
 - 페이지 이동하기
 Main 페이지에서 카드버튼(Card.js)을 누르면 카드 상세(DetailPage)로 이동
+
+```javascript
+//해당 페이지의 제목을 설정할 수 있음
+navigation.setOptions({
+    title:'나만의 꿀팁'
+})
+
+//Stack.screen에서 name 속성으로 정해준 이름을 지정해주면 해당 페이지로 이동하는 함수
+navigation.navigate("DetailPage")
+
+//name 속성을 전달해주고, 두 번째 인자로 딕셔너리 데이터를 전달해주면, Detail 페이지에서 
+//두번째 인자로 전달된 딕셔너리 데이터를 route 딕셔너리로 로 받을 수 있음
+navigation.navigate("DetailPage",{
+    title: title
+})
+
+//전달받은 데이터를 받는 route 딕셔너리
+//비구조 할당 방식으로 route에 params 객체 키로 연결되어 전달되는 데이터를 꺼내 사용
+//navigate 함수로 전달되는 딕셔너리 데이터는 다음과 같은 모습이기 때문입니다.
+/*
+  {
+		route : {
+			params :{
+				title:title
+			}
+		}
+	}
+
+*/
+const { title} = route.params;
+```
+
+**MainPage.js**
+
+```javascript
+export default function MainPage({navigation, route}) {
+    ...
+    useEffect(() => {
+        setTimeout(() => {
+            navigation.setOptions({
+                title: '나만의 꿀팁'
+            })
+            let tip = data.tip
+            setState(tip)
+            setCateState(tip)
+            setReady(false)
+        }, 1000)
+    }, [])
+    ...
+    <View style={styles.textContainer}>
+        {
+            cateState.map((content, i) => {
+                return (
+                    <Card content={content} key={i} navigation={navigation} />
+                )
+            })
+        }
+    </View>
+    ...
+}
+```
+
+**Card.js**
+
+```javascript
+export default function Card({content, navigation}) {
+    ...
+    <TouchableOpacity style={styles.card} onPress={() => {navigation.navigate('DetailPage', content)}}>
+    ...
+}
+```
+
+**DetailPage.js**
+
+```javascript
+import React, { useEffect, useState } from 'react'
+...
+export default function DetailPage({navigation, route}) {
+    const [tip, setTip] = useState({
+        ...
+    })
+    ..
+    useEffect(() => {
+        navigation.setOptions({
+            title: route.params.title,
+            headerStyle: {
+                backgroundColor: 'white',
+                shadowColor: 'white'
+            },
+            headerTintColor: 'black'
+        })
+        setTip(route.params)
+    }, [])
+    ...
+}
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127946399-f59689d4-fe2f-45f3-a823-001afc22edb7.mov">
+</p>
+
+- 상태값 초기 설정 이유 - 컴포넌트가 화면에 그려지는 순서 때문
+
+1. DetailPage 컴포넌트가 useState에 들어있는 데이터를 가지고 화면에 그려진다. (return 함수 실행)
+2. 화면에 그려진 후, useEffect 함수 실행
+3. useEffect에서 상태값 변경 이벤트 실행 시 변경된 데이터로 다시 return 실행
+4. 변경된 데이터로 화면에 DetailPage가 다시 그려진다.
+
+## 14. 페이지 내용 공유
+
+```javascript
+import { Share } from 'react-native'
+
+export default function DetailPage({navigation, route}) {
+    ...
+    const share = () => {
+        Share.share({
+            message: `${tip.title} \n\n ${tip.desc} \n\n ${tip.image}`
+        })
+    }
+    ...
+}
+```
+
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/60697742/127947372-b8eed913-24f6-4ad4-b223-210aaf935ad0.png">
+</p>
+
+## 15. 외부 링크 클릭 이벤트
+
+```
+expo install expo-linking
+```
+
+```javascript
+import * as Linking from 'expo-linking';
+...
+const link = () => {
+    Linking.openURL("https://www.notion.so/3-fe352da2985f44998f82c2fa1073d74d")
+
+}
+...
+```
+
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/60697742/127948037-2b54ebd8-0edf-4045-9add-cd47a5a3859c.mov">
+</p>
