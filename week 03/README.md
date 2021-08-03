@@ -211,8 +211,7 @@ useEffect(() => {
 </p>
 
 ## 09. 앱 상태 바(Status Bar) 관리
-**Expo SDK.**에서 제공해주는 앱 기능 도구 개발 시 확인할 수 있는 사이트 <br>
-[EXPO](https://docs.expo.io/versions/v38.0.0/) <br>
+[Expo SDK.](https://docs.expo.io/versions/v38.0.0/)에서 제공해주는 앱 기능 도구 개발 시 확인할 수 있는 사이트
 
 - Expo 상태 바 설치
 
@@ -231,3 +230,114 @@ import { StatusBar } from 'expo-status-bar'
   <img width="300" src="https://user-images.githubusercontent.com/60697742/127806450-560a634a-6061-4b79-ac2b-4048fdf25d28.png">
   <img width="300" src="https://user-images.githubusercontent.com/60697742/127806467-8842d67b-2951-4925-8d25-d59af0eb8eda.png">
 </p>
+
+## 10. 네비게이터
+- **네비게이터** : 앱에 페이지 개념을 입혀주고 컴포넌트들을 페이지화하여 해당 페이지끼리 이동을 가능하게 해주는 라이브러리
+
+```
+yarn add @react-navigation/native
+
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+## 11. 스택네비게이션 01
+- **스택 네비게이션** : 컴포넌트에 페이지 기능을 부여해주고 컴포넌트에서 컴포넌트로 이동, 즉 페이지 이동 수행 (책갈피 기능) <br>
+페이지 = Stack.Screen <br>
+책갈피 = Stack.Navigator
+
+```
+yarn add @react-navigation/stack
+```
+
+1. 사용 준비
+
+```javascript
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import DetailPage from '../pages/DetailPage';
+import MainPage from '../pages/MainPage';
+
+const Stack = createStackNavigator()
+```
+
+2. 기본 틀
+
+```javascript
+const StackNavigator = () => {
+    return (
+
+    )
+}
+
+export default StackNavigator
+```
+
+3. 스크린 옵션
+
+```javascript
+<Stack.Navigator screenOptions={{
+    headerStyle: {
+        backgroundColor: "white",
+        height: 100
+    },
+    headerTintColor: "black",        headerBackTitleVisible: false
+}}>
+    <Stack.Screen name="MainPage" component={MainPage} />
+    <Stack.Screen name="DetailPage" component={DetailPage} />
+</Stack.Navigator>
+```
+
+4. 페이지 연결
+
+```javascript
+<Stack.Screen name="MainPage" component={MainPage} />
+<Stack.Screen name="DetailPage" component={DetailPage} />
+```
+
+5. App.js에 연결
+
+```javascript
+import { NavigationContainer } from '@react-navigation/native';
+import StackNavigator from './navigation/StackNavigator';
+...
+<NavigationContainer>
+    <StackNavigator />
+</NavigationContainer>
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127941047-c2996215-d322-43d2-80fd-5f78d61d0faf.png">
+</p>
+
+## 12. 스택네비게이션 02
+
+스타일 수정
+
+```javascript
+const StackNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{
+            headerStyle: {
+                backgroundColor: "white",
+                height: 100,
+                borderBottomColor: "white",
+                shadowColor: "white"
+            },
+            headerTitleAlign: 'left',
+            headerTintColor: "black",
+            headerBackTitleVisible: false
+        }}>
+            <Stack.Screen name="MainPage" component={MainPage} />
+            <Stack.Screen name="DetailPage" component={DetailPage} />
+        </Stack.Navigator>
+    )
+}
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127941522-350962cd-9ed0-4670-953b-b48bf4b64dc2.png">
+</p>
+
+## 12. 스택네비게이션 03
+- 페이지 이동하기
+Main 페이지에서 카드버튼(Card.js)을 누르면 카드 상세(DetailPage)로 이동
