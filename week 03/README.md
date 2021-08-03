@@ -486,5 +486,5 @@ const link = () => {
 ```
 
 <p align="center">
-  <img width="700" src="https://user-images.githubusercontent.com/60697742/127948037-2b54ebd8-0edf-4045-9add-cd47a5a3859c.mov">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/127948037-2b54ebd8-0edf-4045-9add-cd47a5a3859c.mov">
 </p>
