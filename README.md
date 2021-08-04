@@ -17,7 +17,11 @@
 화면 만들어보기
 ```
 
-## [3 주차 과제]()
+## [3 주차 과제](https://github.com/nezhitsya/Sparta_React_Native/tree/master/week%2003/Homework03)
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/128128595-96bdd88c-1c74-4911-af2b-b2f70d8a1b0c.mov">
+</p>
 
 ```
 화면 페이지화

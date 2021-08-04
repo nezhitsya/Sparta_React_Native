@@ -1,23 +1,10 @@
-# [Stack Navigation](https://velog.io/@nezhitsya/스파르타-코딩-클럽-개발일지-3-kkez02li)
-
-<p align="center">
-  <img width="300" src="https://user-images.githubusercontent.com/60697742/128128595-96bdd88c-1c74-4911-af2b-b2f70d8a1b0c.mov">
-</p>
-
-## 라이브러리
-
-```javascript
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import DetailPage from '../pages/DetailPage';
 import MainPage from '../pages/MainPage';
 import AboutPage from '../pages/AboutPage';
-import LikePage from '../pages/LikePage';
-```
+import LikePage from '../pages/LikePage'
 
-## 태그
-
-```javascript
 const Stack = createStackNavigator()
 const StackNavigator = () => {
     return (
@@ -39,4 +26,5 @@ const StackNavigator = () => {
         </Stack.Navigator>
     )
 }
-```
+
+export default StackNavigator
