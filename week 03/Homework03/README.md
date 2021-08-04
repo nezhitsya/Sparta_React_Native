@@ -15,7 +15,7 @@ import AboutPage from '../pages/AboutPage';
 import LikePage from '../pages/LikePage';
 ```
 
-## 태그
+## 네비게이션 설정
 
 ```javascript
 const Stack = createStackNavigator()
@@ -37,6 +37,31 @@ const StackNavigator = () => {
             <Stack.Screen name="AboutPage" component={AboutPage} />
             <Stack.Screen name="LikePage" component={LikePage} />
         </Stack.Navigator>
+    )
+}
+```
+
+## 화면에 네비게이션 넣기
+
+```javascript
+export default function LikePage({navigation, route}) {
+    ...
+    useEffect(() => {
+        navigation.setOptions({
+            title: '찜한 팁'
+        })
+    })
+    
+    return (
+        <ScrollView style={styles.container}>
+            {
+                tip.map((content, i) => {
+                    return (
+                        <LikeCard key={i} content={content} navigation={navigation} />
+                    )
+                })
+            }
+        </ScrollView>
     )
 }
 ```
