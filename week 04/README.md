@@ -119,6 +119,11 @@ import axios from 'axios';
 ```
 
 ```javascript
+const [weather, setWeather] = useState({
+    temp: 0,
+    condition: ''
+})
+
 const getLocation = async () => {
     try {
         await Location.requestPermissionsAsync()
@@ -144,7 +149,8 @@ const getLocation = async () => {
 ```
 
 <p align="center">
-  <img width="300" src="">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/128311038-8ac266d3-5f07-4a74-b14f-0b07d618122d.png">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/128311101-845d8c25-ec24-4c71-a2a8-3841fe2475b8.png">
 </p>
 
 ## 05. 서버리스 (serverless)
@@ -195,3 +201,11 @@ export const firebase_db = firebase.database()
 - 플랫폼과 실시간 데이터를 주고 받는 것에 특화
 - 이미지 저장 > File Storage
 - JSON 데이터 > Realtime Database
+
+data.json 업로드
+
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/60697742/128311492-f42797fc-1e59-4762-ae55-be0ac12c91d2.png">
+</p>
+
+## 10. Realtime Database - Read
