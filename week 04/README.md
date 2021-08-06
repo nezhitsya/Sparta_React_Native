@@ -208,4 +208,54 @@ data.json 업로드
   <img width="700" src="https://user-images.githubusercontent.com/60697742/128311492-f42797fc-1e59-4762-ae55-be0ac12c91d2.png">
 </p>
 
-## 10. Realtime Database - Read
+## 10. Realtime Database - Read 01
+
+현재 코드 리뷰
+
+```javascript
+// 필요 데이터 가져오기
+import data from '../data.json';
+...
+// 데이터 관리 상태
+const [state, setState] = useState([])
+// 카테고리에 맞는 데이터 저장 관리 상태
+const [cateState, setCateState] = useState([])
+...
+// useEffect에서 데이터를 실제 상태 관리
+useEffect(() => {
+    navigation.setOptions({
+        title:'나만의 꿀팁'
+    })
+
+    setTimeout(()=>{
+        let tip = data.tip;
+        setState(tip)
+        setCateState(tip)
+        getLocation()
+        setReady(true)
+    }, 1000)
+
+},[])
+```
+
+Firebase 적용
+
+```javascript
+import {firebase_db} from "../firebaseConfig"
+...
+useEffect(() => {
+    snavigation.setOptions({
+        title: '나만의 꿀팁'
+    })
+    
+    firebase_db.ref('/tip').once('value').then((snapshot) => {
+        let tip = snapshot.val()
+        setState(tip)
+        setCateState(tip)
+        getLocation()
+        setReady(false)
+    })
+}, [])
+```
+
+## 11. Realtime Database - Read 02
