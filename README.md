@@ -28,3 +28,13 @@
 외부 링크 연결
 화면 만들어보기
 ```
+
+## [4 주차 과제](https://github.com/nezhitsya/Sparta_React_Native/tree/master/week%2004/Homework04)
+
+```
+Firebase 데이터 추출
+데이터 없을 때 조회 에러 처리
+Firebase 데이터 삭제 구현
+선택 데이터 디테일 보기 구현
+AdMob 가입 및 앱 생성
+```

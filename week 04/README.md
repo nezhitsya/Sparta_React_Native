@@ -259,3 +259,59 @@ useEffect(() => {
 ```
 
 ## 11. Realtime Database - Read 02
+
+card.js > DetailPage.js 데이터 idx 전달
+
+```javascript
+// 기존
+<TouchableOpacity style={styles.card} onPress={()=>{navigation.navigate('DetailPage',content)}}>
+
+// 변경
+<TouchableOpacity style={styles.card} onPress={() => {navigation.navigate('DetailPage', {idx: content.idx})}}>
+```
+
+```javascript
+useEffect(() => {
+    navigation.setOptions({
+        title: route.params.title,
+        headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: 'white'
+        },
+        headerTintColor: 'black'
+    })
+    const { idx } = route.params
+    firebase_db.ref('/tip/'+idx).once('value').then((snapshot) => {
+        let tip = snapshot.val()
+        setTip(tip)
+    })
+}, [])
+```
+
+## 11. Realtime Database - Write
+찜하기 기능 데이터 구조
+- 번호 : idx
+- 이미지 : image
+- 제목 : title
+- 내용 : desc
+
+사용자마다 고유한 ID 값 생성
+
+```
+expo install expo-constants
+```
+
+```javascript
+import Constants from 'expo-constants';
+...
+const like = () => {
+    const user_id = Constants.installationId
+    firebase_db.ref('/like/' + user_id + '/' + tip.idx).set(tip, function(error) {
+         Alert.alert('찜하기!')
+    })
+}
+```
+
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/128586306-872fe0fd-2396-47ae-961d-6fc24a51dacd.png">
+</p>
