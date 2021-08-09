@@ -1,4 +1,4 @@
-# [Firebase]()
+# [Firebase](https://velog.io/@nezhitsya/스파르타-코딩-클럽-개발일지-4-1ka590ri)
 
 <p align="center">
   <img width="300" src="https://user-images.githubusercontent.com/60697742/128659354-aba84a1f-4f05-44eb-adae-73016a7e1cc3.mp4">
