@@ -27,3 +27,67 @@ AdMob : 앱 내 구글 배너광고를 쉽게 붙일 수 있으며 수익 현황
 ```
 expo install expo-ads-admob
 ```
+
+app.json 수정
+
+```
+"ios": {
+   "supportsTablet": true,
+   "buildNumber": "1.0.0",
+   "bundleIdentifier": "com.example.practice01",
+   "config": {
+      "googleMobileAdsAppId": ""
+   }
+},
+"android": {
+   "package": "com.example.practice01",
+   "versionCode": 1,
+   "config": {
+     "googleMobileAdsAppId": ""
+   },
+   "adaptiveIcon": {
+      "foregroundImage": "./assets/adaptive-icon.png",
+      "backgroundColor": "#FFFFFF"
+   }
+},
+```
+
+## 04. 애드몹 (AdMob) - 가로 배너
+1. 애드몹 가로 배너 광고 단위 설정
+2. 앱 상에 적용
+
+라이브러리
+
+```javascript
+import {
+   setTestDeviceIDAsync,
+   AdMobBanner,
+   AdMobInterstitial,
+   PublisherBanner,
+   AdMobRewarded
+} from 'expo-ads-admob';
+```
+
+배너 광고 삽입
+
+```javascript
+{
+   Platform.OS === 'ios' ? (
+      <AdMobBanner
+         bannerSize='fullBanner'
+         servePersonalizedAds={true}
+         adUnitID="ca-app-pub-5747612504152276/3005792623"
+         style={styles.banner}
+      />
+   ) : (
+      <AdMobBanner
+         bannerSize='fullBanner'
+         servePersonalizedAds={true}
+         adUnitID="ca-app-pub-5747612504152276/3005792623"
+         style={styles.banner}
+      />
+   )
+}
+```
+
+## 05. 애드몹 (AdMob) - 전면 배너
