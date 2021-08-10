@@ -31,6 +31,10 @@
 
 ## [4 주차 과제](https://github.com/nezhitsya/Sparta_React_Native/tree/master/week%2004/Homework04)
 
+<p align="center">
+  <img width="300" src="https://user-images.githubusercontent.com/60697742/128659354-aba84a1f-4f05-44eb-adae-73016a7e1cc3.mp4">
+</p>
+
 ```
 Firebase 데이터 추출
 데이터 없을 때 조회 에러 처리
