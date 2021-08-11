@@ -198,3 +198,34 @@ cross-platform UI toolkit
 
 #### 3. [Shoutem](https://shoutem.github.io/ui/)
 UI 컴포넌트, 테마, 컴포넌트 애니메이션 세 부분으로 구성된 React Native UI Kit
+
+#### 4. [UI Kitten](https://github.com/akveo/react-native-ui-kitten)
+스타일 정의를 특정 위치로 이동시켜 컴포넌트를 재사용 및 단일방식으로 스타일화
+사용자 정의 및 재사용 가능한 react-native component kit
+
+#### 5. [React Native Material UI](https://github.com/xotahal/react-native-material-ui)
+Google's material design을 맞춤 설정할 수 있는 UI 컴포넌트 세트 제공
+
+#### 6. [React Native Material Kit](https://github.com/xinthink/react-native-material-kit)
+Google MD 구현하는 기본적인 UI 컴포넌트 및 테마 제공
+
+#### 7. [Nachos UI](https://github.com/nachos-ui/nachos-ui)
+사용자 정의 가능한 컴포넌트 제공
+웹에서 작동 가능
+
+#### 8. [React Native UI Library](https://github.com/wix/react-native-ui-lib)
+색상, 타이포그래피, 그림자, 테두리 반경 등 미리 정의된 스타일 설정 제공
+
+#### 9. [React Native Paper](https://github.com/callstack/react-native-paper)
+bundle-size를 줄이기 위한 babel-plugin과 material design 가이드 라인을 따르는 크로스 플랫폼 UI 컴포넌트 라이브러리
+
+#### 10. [Expo Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
+NavBar / TabBar / ToolbarAdroid, 이미지 등 스타일링 지원 맞춤형 아이콘 세트
+
+#### 11. [Teaset](https://github.com/rilyu/teaset)
+순수 JS(ES6) 컴포넌트와 반응하는 UI 라이브러리
+콘텐츠 표시 및 동작 제어에 중점
+
+#### 12. ETC
+
+[기타 라이브러리 참고](https://github.com/jondot/awesome-react-native)
